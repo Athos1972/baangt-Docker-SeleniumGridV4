@@ -35,11 +35,8 @@ RUN apt-get update -q && \
 # Install Baangt
 RUN git clone -b baangt-selenium-grid-v4 https://gogs.earthsquad.global/athos/baangt && \
     pip3 install -r baangt/requirements.txt && \
-
-RUN
     rm -rf baangt/browserDrivers && \
     mkdir baangt/browserDrivers && \
-RUN
     cd baangt/browserDrivers && \
     wget http://selenium-release.storage.googleapis.com/4.0-alpha5/selenium-server-4.0.0-alpha-5.jar && \
     BASE_URL=https://chromedriver.storage.googleapis.com && \
