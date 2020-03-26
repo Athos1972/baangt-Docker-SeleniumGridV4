@@ -38,6 +38,7 @@ RUN git clone -b baangt-selenium-grid-v4 https://gogs.earthsquad.global/athos/ba
     rm -rf baangt/browserDrivers && \
     mkdir baangt/browserDrivers && \
     cd baangt/browserDrivers && \
+    wget http://selenium-release.storage.googleapis.com/4.0-alpha5/selenium-server-4.0.0-alpha-5.jar && \
 
     GECKODRIVER_VERSION=`curl https://github.com/mozilla/geckodriver/releases/latest | grep -Po 'v[0-9]+.[0-9]+.[0-9]+'` && \
     wget https://github.com/mozilla/geckodriver/releases/download/$GECKODRIVER_VERSION/geckodriver-$GECKODRIVER_VERSION-linux64.tar.gz && \
