@@ -48,7 +48,7 @@ RUN git clone -b baangt-selenium-grid-v4 https://gogs.earthsquad.global/athos/ba
     tar -zxf geckodriver-$GECKODRIVER_VERSION-linux64.tar.gz && \
     chmod +x geckodriver && \
     rm geckodriver-$GECKODRIVER_VERSION-linux64.tar.gz && \
-    cd ../.. && \
+    cd ../..
 
 WORKDIR /root/
 
