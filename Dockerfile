@@ -23,6 +23,7 @@ RUN apt-get update -q && \
     apt-get install -y --no-install-recommends xfonts-base xfonts-75dpi xfonts-100dpi && \
     apt-get install -y --no-install-recommends python-pip python3.7-dev python-qt4 python3-pip tk-dev && \
     apt-get install -y --no-install-recommends libssl-dev git jq firefox unzip && \
+    apt-get install -y --no-install-recommends default-jre && \
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
     dpkg -i google-chrome-stable_current_amd64.deb; apt-get -fy install && \
     rm google-chrome-stable_current_amd64.deb && \
@@ -75,3 +76,5 @@ RUN chmod a+x /root/start-vncserver.sh && \
 EXPOSE 5901
 ENV USER root
 CMD [ "/root/start-vncserver.sh" ]
+
+
