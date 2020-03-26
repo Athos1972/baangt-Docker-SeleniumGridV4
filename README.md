@@ -39,7 +39,7 @@ $ java -jar /baangt/browserDrivers/selenium-server-4.0.0-alpha-5.jar standalone
 
 Check http://localhost:4444/status
 
-Use to test examples/globals_grid4.json
+Use to test baangt/examples/globals_grid4.json
 
 TC.Browser: REMOTE_V4
 
