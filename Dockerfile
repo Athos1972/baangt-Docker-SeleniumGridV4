@@ -48,7 +48,7 @@ RUN git clone -b baangt-selenium-grid-v4 https://gogs.earthsquad.global/athos/ba
     tar -zxf geckodriver-$GECKODRIVER_VERSION-linux64.tar.gz && \
     chmod +x geckodriver && \
     rm geckodriver-$GECKODRIVER_VERSION-linux64.tar.gz && \
-    cd ../.. && \
+    cd ../..
 
 WORKDIR /root/
 
@@ -77,4 +77,4 @@ EXPOSE 5901
 ENV USER root
 CMD [ "/root/start-vncserver.sh" ]
 
-RUN java -jar baangt/browserDrivers/selenium-server-4.0.0-alpha-5.jar standalone
+
