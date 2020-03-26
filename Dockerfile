@@ -35,20 +35,20 @@ RUN apt-get update -q && \
 # Install Baangt
 RUN git clone -b baangt-selenium-grid-v4 https://gogs.earthsquad.global/athos/baangt && \
     pip3 install -r baangt/requirements.txt && \
-    rm -rf baangt/browserDrivers && \
-    mkdir baangt/browserDrivers && \
-    cd baangt/browserDrivers && \
-    wget http://selenium-release.storage.googleapis.com/4.0-alpha5/selenium-server-4.0.0-alpha-5.jar && \
-    BASE_URL=https://chromedriver.storage.googleapis.com && \
-    VERSION=$(curl -sL "$BASE_URL/LATEST_RELEASE") && \
-    curl -sL "$BASE_URL/$VERSION/chromedriver_linux64.zip" -o chromedriver.zip && \
-    unzip chromedriver.zip && \
-    GECKODRIVER_VERSION=`curl https://github.com/mozilla/geckodriver/releases/latest | grep -Po 'v[0-9]+.[0-9]+.[0-9]+'` && \
-    wget https://github.com/mozilla/geckodriver/releases/download/$GECKODRIVER_VERSION/geckodriver-$GECKODRIVER_VERSION-linux64.tar.gz && \
-    tar -zxf geckodriver-$GECKODRIVER_VERSION-linux64.tar.gz && \
-    chmod +x geckodriver && \
-    rm geckodriver-$GECKODRIVER_VERSION-linux64.tar.gz && \
-    cd ../.. && \
+#    rm -rf baangt/browserDrivers && \
+#    mkdir baangt/browserDrivers && \
+#    cd baangt/browserDrivers && \
+#    wget http://selenium-release.storage.googleapis.com/4.0-alpha5/selenium-server-4.0.0-alpha-5.jar && \
+#    BASE_URL=https://chromedriver.storage.googleapis.com && \
+#    VERSION=$(curl -sL "$BASE_URL/LATEST_RELEASE") && \
+#    curl -sL "$BASE_URL/$VERSION/chromedriver_linux64.zip" -o chromedriver.zip && \
+#    unzip chromedriver.zip && \
+#    GECKODRIVER_VERSION=`curl https://github.com/mozilla/geckodriver/releases/latest | grep -Po 'v[0-9]+.[0-9]+.[0-9]+'` && \
+#    wget https://github.com/mozilla/geckodriver/releases/download/$GECKODRIVER_VERSION/geckodriver-$GECKODRIVER_VERSION-linux64.tar.gz && \
+#    tar -zxf geckodriver-$GECKODRIVER_VERSION-linux64.tar.gz && \
+#    chmod +x geckodriver && \
+#    rm geckodriver-$GECKODRIVER_VERSION-linux64.tar.gz && \
+#    cd ../.. && \
 
 WORKDIR /root/
 
@@ -77,4 +77,4 @@ EXPOSE 5901
 ENV USER root
 CMD [ "/root/start-vncserver.sh" ]
 
-RUN java -jar baangt/browserDrivers/selenium-server-4.0.0-alpha-5.jar standalone
+
