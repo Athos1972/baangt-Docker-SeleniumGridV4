@@ -33,7 +33,7 @@ RUN apt-get update -q && \
     rm -rf /var/lib/apt/lists/*
 
 # Install Baangt
-RUN git clone https://gogs.earthsquad.global/athos/baangt && \
+RUN git clone -b baangt-selenium-grid-v4 https://gogs.earthsquad.global/athos/baangt && \
     pip3 install -r baangt/requirements.txt && \
     rm -rf baangt/browserDrivers && \
     mkdir baangt/browserDrivers && \
