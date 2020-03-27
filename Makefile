@@ -1,6 +1,6 @@
 
-REPOSITORY?=baangt/baangt-vnc
-NAME?=baangtVNC
+REPOSITORY?=baangt/baangt-seleniumgridv4-vnc
+NAME?=baangtSeleniumGridV4VNC
 TAG?=latest
 
 DOCKER = docker

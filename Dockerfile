@@ -33,7 +33,7 @@ RUN apt-get update -q && \
     rm -rf /var/lib/apt/lists/*
 
 # Install Baangt
-RUN git clone -b baangt-selenium-grid-v4 https://gogs.earthsquad.global/athos/baangt && \
+RUN git clone -b master https://gogs.earthsquad.global/athos/baangt --single-branch && \
     pip3 install -r baangt/requirements.txt && \
     rm -rf baangt/browserDrivers && \
     mkdir baangt/browserDrivers && \
@@ -55,17 +55,16 @@ RUN touch /root/.vnc/passwd && \
 
 COPY start-vncserver.sh /root/
 COPY baangt.sh /root/
-COPY getdrivers.sh /root/
+COPY baangt.ini /baangt/
 RUN chmod a+x /root/start-vncserver.sh && \
     chmod a+x /root/baangt.sh && \
-    chmod a+x /root/getdrivers.sh && \
-    /root/getdrivers.sh && \
     echo "mycontainer" > /etc/hostname && \
     echo "127.0.0.1	localhost" > /etc/hosts && \
     echo "127.0.0.1	mycontainer" >> /etc/hosts
 
+WORKDIR /baangt/
+RUN python3 baangt.py --reloadDrivers=True
+
 EXPOSE 5901
 ENV USER root
 CMD [ "/root/start-vncserver.sh" ]
-
-
