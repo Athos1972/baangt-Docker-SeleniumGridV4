@@ -1,5 +1,4 @@
 #!/bin/bash
-
 echo "starting VNC server ..."
 export USER=root
 alias python=python3

@@ -1,4 +1,9 @@
 export XKL_XMODMAP_DISABLE=1
 #export DISPLAY=:1
 #autocutsel -fork
-exec /usr/bin/startlxde
+exec /usr/bin/startlxde &
+chmod a+x /baangt/browserDrivers/*
+cd /baangt/browserDrivers/
+java -jar selenium*.jar standalone &
+cd -
+python3 /baangt/baangt.py
