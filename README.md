@@ -1,6 +1,3 @@
-README
-======
-
 This creates a Docker container with Ubuntu 18.04, [TightVNC Server](https://tightvnc.com) and [baangt](https://baangt.org).
 
 # To build:
